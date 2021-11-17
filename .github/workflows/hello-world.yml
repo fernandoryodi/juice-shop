@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Fernando Abe
+name: Meu primeiro workflow
 
 # Controls when the workflow will run
 on:
@@ -10,16 +10,13 @@ on:
   pull_request:
     branches: [ master ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  job1:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
+    
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -34,3 +31,16 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+
+
+  Job2:
+    runs-on: windows-lastest
+
+    steps:
+    - name: Chekout do repositório
+      uses: actions/checkout@v2
+    - name: Imprime 'Hello word' na tela
+      run: echo Hellow Windows world!
+    
+    
